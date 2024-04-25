@@ -20,7 +20,6 @@ endif()
 # We basically include .cmake files which contains our cmake functions.
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-include(InitSwift)
 include(AddSwift)
 
 set(CMAKE_CXX_STANDARD 17)
