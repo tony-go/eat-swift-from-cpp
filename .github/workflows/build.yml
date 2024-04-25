@@ -31,7 +31,9 @@ jobs:
         fetch-depth: 0
 
     - name: Install CMake and Ninja
-      run: sudo apt-get update && sudo apt-get install cmake ninja-build
+      run: |
+        sudo apt-get update
+        sudo apt-get install cmake ninja-build clang
 
     - name: Build the Project
       run: make
