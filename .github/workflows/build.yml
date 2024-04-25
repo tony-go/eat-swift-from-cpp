@@ -48,6 +48,10 @@ jobs:
         tar xzf swift-5.9.2-RELEASE-ubuntu20.04.tar.gz
         sudo mv swift-5.9.2-RELEASE-ubuntu20.04 /usr/share/swift
 
+    - name: Set Environment Variables
+      run: |
+        echo "PATH=$PATH:/usr/share/swift/usr/bin" >> $GITHUB_ENV
+
     - name: Build the Project
       run: CXX=clang++-15 make
 
