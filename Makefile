@@ -6,7 +6,7 @@ all: build
 # Setup build directory and run CMake
 setup:
 	@mkdir -p build
-	@cd build && cmake -G 'Ninja' ../
+	@cd build && cmake -G 'Ninja' -DCMAKE_CXX_COMPILER=clang++ ../
 
 # Build the project using Ninja
 build: setup

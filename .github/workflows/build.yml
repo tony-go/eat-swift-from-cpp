@@ -30,7 +30,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Install CMake and Ninja
+    - name: Install CMake, Ninja and Clang
       run: |
         sudo apt-get update
         sudo apt-get install cmake ninja-build clang
