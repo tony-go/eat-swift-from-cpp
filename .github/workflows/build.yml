@@ -42,15 +42,12 @@ jobs:
         sudo ./llvm.sh 15  # Install Clang 15
         sudo apt-get install -y clang-15 lldb-15 lld-15
 
-    - name: Install Swift
-      run: |
-        wget https://swift.org/builds/swift-5.9.2-release/ubuntu2004/swift-5.9.2-RELEASE/swift-5.9.2-RELEASE-ubuntu20.04.tar.gz
-        tar xzf swift-5.9.2-RELEASE-ubuntu20.04.tar.gz
-        sudo mv swift-5.9.2-RELEASE-ubuntu20.04 /usr/share/swift
+    - uses: swift-actions/setup-swift@v2
+      with:
+        swift-version: "5.9.2"
 
-    - name: Set Environment Variables
-      run: |
-        echo "PATH=$PATH:/usr/share/swift/usr/bin" >> $GITHUB_ENV
+    - name: Get swift version
+      run: swift --version
 
     - name: Build the Project
       run: CXX=clang++-15 make
